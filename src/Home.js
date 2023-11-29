@@ -26,7 +26,6 @@ function Home() {
 
   return (
     <div className="Home">
-      <h1>Hi</h1>
       <Navbar city={city} setCity={setCity} />
       <Routes>
         <Route

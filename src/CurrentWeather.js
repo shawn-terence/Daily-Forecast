@@ -44,7 +44,9 @@ function CurrentWeather({ weather }) {
                       <p>Pressure: {weather.main.pressure} hPa</p>
                       <p>Wind Speed: {weather.wind.speed} m/s</p>
                       <Link to="/Weatherdetails">
-                                <button>More details</button>
+                                <button className="Details-btn">
+                                More Details
+                                </button>
                       </Link>
                   </div>
 

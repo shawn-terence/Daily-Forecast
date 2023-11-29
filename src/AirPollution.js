@@ -67,7 +67,7 @@ const AirPollution = ({ location, apiKey }) => {
       <BarChartF data={formatDataForChart()} />
 
       <Link to="/Pollutiondetails">
-        <button>More Details </button>
+        <button className='Details-btn'>More Details </button>
       </Link>
     </div>
   );

@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 import BarChartF from './BarChart';
 
 const AirPollution = ({ location, apiKey }) => {
-  const geoApi = 'http://api.openweathermap.org/geo/1.0/direct';
-  const pollutionApi = 'http://api.openweathermap.org/data/2.5/air_pollution';
-
+  const geoApi = 'https://api.openweathermap.org/geo/1.0/direct';
+  const pollutionApi = 'https://api.openweathermap.org/data/2.5/air_pollution';
+  
   const [coordinates, setCoordinates] = useState({});
   const [airPollution, setAirPollution] = useState({});
 

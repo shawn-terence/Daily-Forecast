@@ -32,17 +32,21 @@ function CurrentWeather({ weather }) {
         <>
          {weather.name && (
           <div id="current-weather-container">
-              <h1> {weather.name}</h1>
+            <div id="cityname">
+               <h2> {weather.name}</h2>
+            </div>
+              
                 <div id="weather-container">
                   <div id="weather-icon-container">
                   {weatherIconUrl && <img src={weatherIconUrl} id="weather-icon" alt={weatherDescription} />}
+                  <h1  id="temp"> {weather.main.temp}°</h1>
                   </div >
                   <div id="weather-schematics">
-                      <p>Temp: {weather.main.temp} °C</p>
-                      <p>Feels Like: {weather.main.feels_like} °C</p>
-                      <p>Humidity: {weather.main.humidity}%</p>
-                      <p>Pressure: {weather.main.pressure} hPa</p>
-                      <p>Wind Speed: {weather.wind.speed} m/s</p>
+                      <p><h2>Current weather:{weatherDescription}</h2></p>
+                      <p className="underlined">Feels Like: {weather.main.feels_like} °C</p>
+                      <p className="underlined">Humidity: {weather.main.humidity}%</p>
+                      <p className="underlined">Pressure: {weather.main.pressure} hPa</p>
+                      <p className="underlined">Wind Speed: {weather.wind.speed} m/s</p>
                       <Link to="/Weatherdetails">
                                 <button className="Details-btn">
                                 More Details

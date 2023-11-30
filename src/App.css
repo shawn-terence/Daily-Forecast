@@ -1,66 +1,123 @@
-body{
+body {
   background-color: rgba(221, 221, 221, 0.541);
-  
 }
-.Home{
-  display: flex ;
+
+.Home {
+  display: flex;
   flex-direction: column;
   justify-items: center;
   margin: auto;
   align-items: center;
 }
-#nav-container{
+#web-logo {
+  display: inline-flex;
+  margin-bottom: 5px;
+}
+#weather-schematics{
+  font-size: 15px;
+  font-weight: 600;
+  margin-right: 19px;
+}
+
+.underlined {
+  border-bottom: solid 1px gray;
+}
+
+#nav-container {
   margin-bottom: 10px;
   display: inline-flex;
   width: 100vw;
   flex-direction: row;
   justify-content: space-between;
-  background-color:#87CEEB ;
+  background-color: #87CEEB;
   padding-left: 10px;
   padding-right: 10px;
-
 }
-#input-form{
-  align-self:center ;
+
+#input-form {
+  align-self: center;
   justify-self: center;
 }
-#weather-container{
+
+#weather-container {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-#weather-icon-container{
-  width:200px;
+
+#weather-icon-container {
+  width: 200px;
   display: flex;
   align-content: center;
   justify-content: center;
+  flex-direction: column;
+  margin-right: 10px;
 }
-#weather-icon{
+
+#weather-icon {
   min-width: 100px;
 }
-#current-weather-container{
-  text-align: center;
+#temp{
+  font-size: 50px;
+}
+
+#current-weather-container {
+  text-align: left;
   background-color: rgb(255, 255, 255);
   width: 500px;
   margin-bottom: 10px;
-  
+  position: relative;
+  padding: 25px;
+  background: radial-gradient(
+      178.94% 106.41% at 26.42% 106.41%,
+      #b1efff 0%,
+      rgba(255, 255, 255, 0) 71.88%
+    ) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */,
+    #FFFFFF;
+  box-shadow: 0px 155px 62px rgba(0, 0, 0, 0.01),
+    0px 87px 52px rgba(0, 0, 0, 0.05),
+    0px 39px 39px rgba(0, 0, 0, 0.09),
+    0px 10px 21px rgba(0, 0, 0, 0.1),
+    0px 0px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 23px;
+  transition: all 0.8s cubic-bezier(0.15, 0.83, 0.66, 1);
+  cursor: pointer;
 }
-#web-logo{
-  display: inline-flex;
-  margin-bottom: 5px;
-}
-nav{
-  align-self: center;
 
+#current-weather-container:hover {
+  transform: scale(1.05);
 }
-#search-input{
-  height: 30px;
-  width: 250px;
-  
+
+.temp {
+  position: absolute;
+  left: 25px;
+  bottom: 12px;
+  font-weight: 700;
+  font-size: 64px;
+  line-height: 77px;
+  color: rgba(87, 77, 51, 1);
 }
-#air-Pollution{
-  background-color: white;
+
+.temp-scale {
+  width: 80px;
+  height: 36px;
+  position: absolute;
+  right: 25px;
+  bottom: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.06);
+  border-radius: 9px;
 }
+
+.temp-scale span {
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 134.49%;
+  color: rgba(87, 77, 51, 0.66);
+}
+
 .Details-btn {
   background-color: #eee;
   border: none;
@@ -72,163 +129,308 @@ nav{
   box-shadow: 0 0.4rem #dfd9d9;
   cursor: pointer;
   margin-bottom: 10px;
-
- }
-#weather-schematics{
-  text-align: left;
 }
- 
- .Details-btn:active {
+
+.Details-btn:active {
   color: white;
   box-shadow: 0 0.2rem #dfd9d9;
   transform: translateY(0.2rem);
- }
- 
- .Details-btn:hover:not(:disabled) {
-  background:#87CEEB;
+}
+
+.Details-btn:hover:not(:disabled) {
+  background: #87ceeb;
   color: white;
   text-shadow: 0 0.1rem #bcb4b4;
- }
- 
- .Details-btn:disabled {
-  cursor: auto;
-  color: grey;
- }
- 
- .Details-btn:disabled {
-  cursor: auto;
-  color: grey;
- }
-/* Mobile devices Potrait*/
-@media (max-width: 575px) { 
-  body{
-    background-color: rgb(241, 237, 237); 
-  }
-  #weather-container{
-    display: flex;
-    flex-direction: row;
-    font-size: 15px;
-  }
-  nav{
-    margin-top: 5px;
-    font-weight: 500;
-    font-size: large;
-  }
-  #nav-container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-    background-color: #87CEEB ;
-    margin-bottom: 20px;
-    width: 100%;
-    padding: 2%;
-  }
-  #web-logo{
-    display: inline-flex;
-    margin-bottom: 5px;
-  }
-  #input-form{
-    
-    display: flex;
-    flex-direction: row;
-    max-height: 30px
+}
 
-  }
-  .weather-icon{
-    max-width: 100px;
-  }
-  #Chart-container{
-    width: 95%;
-    min-width: 90vw;
-  }
-  #current-weather-container{
-    margin-top: 10px;
-    text-align: center;
-    background-color: rgb(255, 255, 255);
-    font-size: 20px;
-    width: 95%;
-    padding-right: 10px;
-    
- }
- .Details-btn {
+.Details-btn:disabled {
+  cursor: auto;
+  color: grey;
+}
+
+.Details-btn:disabled {
+  cursor: auto;
+  color: grey;
+}
+#air-Pollution {
+  text-align: center;
+  background-color: white;
+  padding: 20px;
+  margin-bottom: 10px;
+  position: relative;
+  background: radial-gradient(
+    178.94% 106.41% at 26.42% 106.41%,
+    #ffc7b1 0%,
+    rgba(255, 255, 255, 0) 71.88%
+  ) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */,
+  #FFFFFF;
+  box-shadow: 0px 155px 62px rgba(0, 0, 0, 0.01),
+    0px 87px 52px rgba(0, 0, 0, 0.05),
+    0px 39px 39px rgba(0, 0, 0, 0.09),
+    0px 10px 21px rgba(0, 0, 0, 0.1),
+    0px 0px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 23px;
+  transition: all 0.8s cubic-bezier(0.15, 0.83, 0.66, 1);
+  cursor: pointer;
+}
+
+#air-Pollution:hover {
+  transform: scale(1.05);
+}
+
+.Details-btn {
   background-color: #eee;
   border: none;
   padding: 0.8rem;
-  font-size: 0.8rem;
+  font-size: 1rem;
   width: 9em;
   border-radius: 0.7rem;
   color: black;
   box-shadow: 0 0.4rem #dfd9d9;
   cursor: pointer;
-  margin-bottom: 10px;
+  margin-top: 10px;
+}
 
- }
- 
- .Details-btn:active {
+.Details-btn:active {
   color: white;
   box-shadow: 0 0.2rem #dfd9d9;
   transform: translateY(0.2rem);
- }
- 
- .Details-btn:hover:not(:disabled) {
-  background:#87CEEB;
-  color: white;
-  text-shadow: 0 0.1rem #bcb4b4;
- }
- 
- .Details-btn:disabled {
-  cursor: auto;
-  color: grey;
- }
 }
 
+.Details-btn:hover:not(:disabled) {
+  background: #87ceeb;
+  color: white;
+  text-shadow: 0 0.1rem #bcb4b4;
+}
+
+.Details-btn:disabled {
+  cursor: auto;
+  color: grey;
+}
+
+#search-input{
+  min-height: 35px;
+  min-width: 350px;
+}
+#weather-details-container{
+  display: block;
+  background-color: rgb(245, 245, 245);
+  padding: 10px;
+  font-size: large;
+}
+#pres-hum{
+  border-top: solid 1px gray ;
+}
+#temp-div{
+  display: flex;
+}
+#wind-temp-div{
+  display: flex;
+  flex-direction: row;
+  
+}
+#temp-icon{
+  max-width: 250px;
+  max-height: 200px;
+  min-height: 190px;
+}
+.weather-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.weather-info div {
+  display: flex;
+  align-items: center;
+}
+#wind-details{
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+}
+#wind-readings{
+  margin-left: 5px;
+}
+#temp-container{
+  background-color: white;
+  border: solid 0.5px rgb(172, 171, 171);
+}
+#wind-div{
+  margin-left: 10px;
+  background-color: white;
+  border: solid 0.5px rgb(172, 171, 171);
+}
+#sun-div{
+  display: flex;
+  flex-direction: row;
+  vertical-align: top;
+  justify-content: space-around;
+  align-items: center;
+  border: solid 0.5px rgb(172, 171, 171);
+  background-color: white;
+}
+#sun-up-down{
+  display: inline-block;
+  justify-content: space-between;
+}
+#wind-temp-div{
+  margin: 10px;
+  display:flex;
+  justify-content: space-around;
+}
+
+/* Small Devices (Phones - POTRAIT) */
+@media (max-width: 575px) {
+  body {
+    background-color: rgb(241, 237, 237);
+  }
+  #wind-temp-div{
+    display: flex;
+    flex-direction:column;
+  }
+  #weather-container {
+    display: flex;
+    flex-direction: row;
+    font-size: 15px;
+  }
+  nav {
+    margin-top: 5px;
+    font-weight: 500;
+    font-size: large;
+  }
+  #nav-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    background-color: #87ceeb;
+    margin-bottom: 20px;
+    width: 100%;
+    padding: 2%;
+  }
+  #web-logo {
+    display: inline-flex;
+    margin-bottom: 5px;
+  }
+  #input-form {
+    display: flex;
+    flex-direction: row;
+    max-height: 30px;
+  }
+  #cityname{
+    text-align: left;
+  }
+  .weather-icon {
+    max-width: 100px;
+  }
+  #Chart-container {
+    width: 95%;
+    min-width: 90vw;
+  }
+  #current-weather-container {
+    margin: 10px;
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+    font-size: 10px;
+    width: 90%;
+    
+  }
+  #temp{
+    font-size: 40px;
+  }
+  .Details-btn {
+    background-color: #eee;
+    border: none;
+    padding: 0.8rem;
+    font-size: 0.8rem;
+    width: 9em;
+    border-radius: 0.7rem;
+    color: black;
+    box-shadow: 0 0.4rem #dfd9d9;
+    cursor: pointer;
+    margin-bottom: 10px;
+  }
+
+  .Details-btn:active {
+    color: white;
+    box-shadow: 0 0.2rem #dfd9d9;
+    transform: translateY(0.2rem);
+  }
+
+  .Details-btn:hover:not(:disabled) {
+    background: #87ceeb;
+    color: white;
+    text-shadow: 0 0.1rem #bcb4b4;
+  }
+
+  .Details-btn:disabled {
+    cursor: auto;
+    color: grey;
+  }
+  #temp-icon{
+    max-width: 100px;
+    max-height: 100px;
+    min-height: 100px;
+  }
+  #sun-div{
+    display: flex;
+    flex-direction: column;
+  }
+  #search-input{
+    min-height: 25px;
+    min-width: 200px;
+  }
+  #wind-div{
+    margin: 0;
+  }
+}
+
+
 /* Small Devices (Phones - Landscape) */
-@media (min-width: 576px) and (max-width: 767px) { 
-  #weather-container{
+@media (min-width: 576px) and (max-width: 767px) {
+  #weather-container {
     display: flex;
     flex-direction: row;
   }
- }
+}
 
 /* Medium Devices (Tablets - Portrait) */
-@media (min-width: 768px) and (max-width: 991px) { 
-  #weather-container{
+@media (min-width: 768px) and (max-width: 991px) {
+  #weather-container {
     display: flex;
     flex-direction: row;
   }
-  #Chart-container{
+  #Chart-container {
     max-width: 500px;
     min-width: 500px;
-   }
- }
+  }
+}
 
 /* Large Devices (Tablets - Landscape) */
-@media (min-width: 992px) and (max-width: 1199px) { 
-  #weather-container{
+@media (min-width: 992px) and (max-width: 1199px) {
+  #weather-container {
     display: flex;
     flex-direction: row;
   }
-  #Chart-container{
+  #Chart-container {
     max-width: 500px;
     min-width: 500px;
-   }
- }
+  }
+}
 
 /* Extra Large Devices (Desktops) */
-@media (min-width: 1200px) { 
-  #weather-container{
+@media (min-width: 1200px) {
+  #weather-container {
     display: flex;
     flex-direction: row;
   }
-  #Chart-container{
+  #Chart-container {
     max-width: 500px;
     min-width: 500px;
-   }
-   #current-weather-container{
+  }
+  #current-weather-container {
     text-align: center;
     background-color: rgb(255, 255, 255);
     min-width: 500px;
   }
-
- }
+}

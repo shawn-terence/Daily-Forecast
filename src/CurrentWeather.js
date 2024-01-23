@@ -13,15 +13,19 @@ function CurrentWeather({ weather }) {
       case 'Clear':
         return 'https://cdn1.iconfinder.com/data/icons/weather-line-5/500/weather-01-256.png';
       case 'Clouds':
-        return 'https://cdn2.iconfinder.com/data/icons/weather-119/512/weather-2-64.png';
+        return 'https://cdn1.iconfinder.com/data/icons/weather-471/128/CLOUDS-512.png';
       case 'Smoke':
-          return 'https://cdn4.iconfinder.com/data/icons/air-pollution-6/128/factory_smoke_pollution_air_industry-64.png';
+          return 'https://cdn1.iconfinder.com/data/icons/weather-and-disaster-flat/340/fog_mist_cloud_air_smoke_effect_stream_smoky_dust-512.png';
       case 'Rain':
-            return 'https://cdn2.iconfinder.com/data/icons/weather-119/512/weather-5-64.png';
+            return 'https://cdn3.iconfinder.com/data/icons/nature-emoji/50/Raining-512.png';
       case 'Drizzle':
               return 'https://cdn0.iconfinder.com/data/icons/weather-635/32/drizzle-64.png';
       case 'Snow':
-      return 'https://cdn4.iconfinder.com/data/icons/free-line-christmas-icons/24/Snowflake-64.png';
+      return 'https://cdn1.iconfinder.com/data/icons/snowy-christmas/96/christmas_snowflake_winter_snow_newyear_96-256.png';
+      case 'Mist' :
+           return 'https://cdn2.iconfinder.com/data/icons/unigrid-weather/56/027_fog_haze_mist_wind_direction_breeze_weather-512.png';
+      case 'Fog':
+           return 'https://cdn4.iconfinder.com/data/icons/the-weather-is-nice-today/64/weather_30-512.png'
       default:
         return null;
     }

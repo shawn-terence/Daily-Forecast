@@ -60,13 +60,13 @@ function PollutionDetails({ loc, apiKey }) {
 
   const getPollutantCategory = (value, pollutant) => {
     const pollutantThresholds = {
-      co: { good: 2, fair: 9, moderate: 15, high: 30, dangerous: 40 },
+      co: { good: (0,3000), fair: 9400, moderate: 12400, high: 15400, dangerous: 15500 },
       no: { good: 0.5, fair: 1, moderate: 2, high: 5, dangerous: 10 },
-      no2: { good: 5, fair: 10, moderate: 20, high: 40, dangerous: 50 },
-      o3: { good: 30, fair: 50, moderate: 100, high: 168, dangerous: 200 },
-      so2: { good: 1, fair: 5, moderate: 20, high: 40, dangerous: 50 },
-      'pm2.5': { good: 12, fair: 35, moderate: 55, high: 150, dangerous: 250 },
-      pm10: { good: 20, fair: 50, moderate: 100, high: 350, dangerous: 420 },
+      no2: { good: (0,40), fair: (41,70), moderate: 150, high: 200, dangerous: 250 },
+      o3: { good: (0, 60), fair: 100, moderate: 100, high: 168, dangerous: 200 },
+      so2: { good: (0,20), fair: (21,80), moderate: 20, high: 40, dangerous: 50 },
+      'pm2.5': { good:(0, 10), fair: 25, moderate: 55, high: 150, dangerous: 250 },
+      pm10: { good: (0,20), fair: 50, moderate: 100, high: 350, dangerous: 420 },
       nh3: { good: 5, fair: 15, moderate: 30, high: 60, dangerous: 100 },
     };
 

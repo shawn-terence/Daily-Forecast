@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import BarChartF from "./BarChart";
 
-function PollutionDetails({ loc, apiKey }) {
+function PollutionDetails({ loc, apiKey,isDarkMode }) {
   const geoApi = 'http://api.openweathermap.org/geo/1.0/direct';
   const pollutionApi = 'http://api.openweathermap.org/data/2.5/air_pollution';
 
@@ -122,8 +122,8 @@ function PollutionDetails({ loc, apiKey }) {
   };
 
   return (
-    <div id="Pollution-container">
-      <h1>Pollution Details</h1>
+    <div id={isDarkMode?"Pollution-container-dark":"Pollution-container-light"}>
+      <h1 style={isDarkMode?{ color: 'white' }:{color:'black'}}>Pollution Details</h1>
 
       {airPollution.list && airPollution.list.length > 0 ? (
         <div>
@@ -141,7 +141,7 @@ function PollutionDetails({ loc, apiKey }) {
             </ul>
           </div>
           <div id="pollutant-levels">
-            <h1>Pollutant levels</h1>
+          <h1 style={isDarkMode ? { color: 'white' } : { color: 'black' }}>Pollutant levels</h1>
               {Object.keys(airPollution.list[0].components).map((key) => (
                 <div id="pollutant" key={key}>
                   <h2>{getFullPollutantName(key)}</h2>

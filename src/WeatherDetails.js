@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 
-function WeatherDetails({ cit }) {
+function WeatherDetails({ cit,isDarkMode }) {
   const key = 'dcbfc041780739f54647455e1945b633';
   const api = 'https://api.openweathermap.org/data/2.5/weather';
 
@@ -16,7 +16,7 @@ function WeatherDetails({ cit }) {
   }, [cit, api, key]);
 
   return (
-    <div id='weather-details-container'>
+    <div id={isDarkMode?'weather-details-container-dark':'weather-details-container-light'}>
       <h1>WeatherDetails</h1>
       {weatherDetails.weather && weatherDetails.weather.length > 0 && (
         <div>

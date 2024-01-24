@@ -9,7 +9,7 @@ import PollutionDetails from './PollutionDetails';
 import './App.css'
 
 
-function Home() {
+function Home(isDarkMode) {
   const key = 'dcbfc041780739f54647455e1945b633';
   const api = 'https://api.openweathermap.org/data/2.5/weather';
 
@@ -26,7 +26,7 @@ function Home() {
 
   return (
     <div className="Home">
-      <Navbar city={city} setCity={setCity} />
+      <Navbar city={city} setCity={setCity}  isDarkMode={isDarkMode}/>
       <Routes>
         <Route
           path="/"
@@ -53,11 +53,11 @@ function Home() {
         />
         <Route
             path='/Weatherdetails'
-            element={<WeatherDetails cit={city}/>}
+            element={<WeatherDetails cit={city} isDarkMode={isDarkMode}/>}
         />
         <Route
                 path='/Pollutiondetails'
-                element={<PollutionDetails loc={city} apiKey={key}/>}
+                element={<PollutionDetails loc={city} apiKey={key} isDarkMode={isDarkMode}/>}
         />
       </Routes>
     </div>
